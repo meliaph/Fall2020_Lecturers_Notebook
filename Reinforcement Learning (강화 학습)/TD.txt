@@ -1,0 +1,8 @@
+T = len(state_history)
+alpha= 0.0003
+for t in range(T):
+	index = state_idx(state_history[t-1])
+	index_next = state_idx(state_history[t])
+	V[index] += alpha * (reward_history[t] + gamma * V[index_next] - V[index])
+if (epi+1) % 10000 == 0:
+.............
